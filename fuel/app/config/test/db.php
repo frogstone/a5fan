@@ -9,7 +9,7 @@ return array(
 	'default' => array(
 		'type'			=> 'pdo',
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=a5fan',
+			'dsn'        => 'mysql:host=localhost;dbname=a 5fan',
 			'username'   => 'root',
 			'password'   => 'root',
 		),
