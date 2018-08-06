@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+@import "import";
+
+main > .inner > section:first-of-type {
+	margin-top: 0;
+}
+
+#searchBtn {
+	border: none;
+	outline: none;
+	background: none;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-left: solid 1px #fff;
+	box-sizing: border-box;
+	img {
+		width: 80%;
+		height: auto;
+		vertical-align: middle;
+	}
+	display: none;
+
+	@include mq(m) {
+		width: 60px;
+		height: 60px;
+		right: 2.6315%;
+		padding-top: 0.7em;
+		padding-bottom: 0.7em;
+		img {
+			width: 80%;
+		}
+	}
+
+}
+
+#searchBox {
+
+	border-bottom: solid 1px color(border);
+	background: hsla(0, 0, 95%, 0.95);
+	box-sizing: border-box;
+	display: none;
+
+	dt {
+		padding: 0.2em 0.5em;
+		background: #000;
+		color: #fff;
+	}
+
+	form {
+		margin-bottom: 0px;
+	}
+	label input {
+		margin-right: 0.3em;
+	}
+
+	form button {
+		width: 100%;
+		margin-top: 1em;
+	}
+
+	.close {
+
+		line-height: 1;
+		margin-top: 10px;
+		margin-bottom: 1em;
+
+		button {
+			width: 0;
+			height: 0;
+			border: solid 12px transparent;
+			border-bottom: solid 16px #000;
+			padding: 0;
+		}
+	}
+
+	@include mq(s) {
+		position: absolute;
+		width: 100%;
+		padding-top: margin(sp_y, l);
+		z-index: 100;
+		dt {
+			width: 20%;
+			box-sizing: border-box;
+			float: left;
+			clear: both;
+		}
+
+		dd {
+			width: 75%;
+			float: right;
+		}
+
+		dl > :nth-child(n+3) {
+			margin-top: 1em;
+		}
+
+		ul.condition li:nth-of-type(n+2) {
+			margin-top: 0.4em;
+		}
+
+	}
+
+	@include mq(m) {
+
+		padding-top: margin(pc_y, m);
+
+		dt,
+		dd {
+			display: inline-block;
+			vertical-align: top;
+		}
+		dt {
+			margin-right: 1em;
+		}
+		dt:nth-of-type(n+2) {
+			margin-left: 3em;
+		}
+		ul.condition {
+
+			overflow: hidden;
+
+			li {
+				float: left;
+				width: 10em;
+			}
+			li:nth-of-type(2n+1) {
+				clear: both;
+			}
+			li:nth-of-type(n+3) {
+				margin-top: 0.5em;
+			}
+
+		}
+
+		form button {
+			width: auto;
+			display: inline-block;
+			padding-left: 5em;
+			padding-right: 5em;
+		}
+
+	}
+}
+
+.jsOn {
+
+	#searchBtn {
+		display: block;
+	}
+
+}

@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+/*---------------------------------------------------------
+
+	variable
+
+--------------------------------------------------------*/
+
+$breakpoints: ( s: 'screen and (max-width: 750px)',
+m: 'screen and (min-width: 751px)',
+l: 'screen and (min-width: 961px)',
+2l: 'screen and (min-width: 1280px)',
+3l: 'screen and (min-width: 1500px)',
+ls: 'all and (orientation: landscape)',
+pr: 'all and (orientation: portrait)',
+tb: 'screen and (min-width: 751px) and (orientation: portrait)');
+
+$font:( 2s: 12px,
+s: 14px,
+m: 16px,
+l: 125%,
+2l: 150%,
+3l: 175%,
+4l: 200%,
+5l: 225%);
+
+$color:( text: hsl(0, 0, 30%),
+border: hsl(0, 0, 60%),
+blue: #438AB5,
+lblue: #BAD6E8,
+dblue: #677680,
+green: #1B9188,
+orange: #DD6A07,
+dgray: hsl(0, 0, 20%),
+mgray: hsl(0, 0, 60%),
+lgray: hsl(0, 0, 90%),
+ulgray: hsl(0, 0, 97%));
+
+$margin:( text:( s: 0.5em,
+m: 1em,
+l:2em,
+2l :3em,
+3l :4em),
+sp_y:( s:10px,
+m:20px,
+l:30px,
+2l:40px,
+3l:60px,
+),
+pc_y:( s:20px,
+m:30px,
+l:40px,
+2l:60px,
+),
+/*
+	sp_x:(
+		base:6vw,
+		2s: 2%,
+		s: 4%,
+		m: 8%,
+		l: 16%,
+		nm:-8%,
+	),
+	pc_x:(
+		2s	: 10px,
+		s	: 20px,
+		m	: 40px,
+		l	: 80px,
+		2l	: 160px
+	),
+	*/
+
+);
+
+
+
+/*---------------------------------------------------------
+
+	mixin
+
+--------------------------------------------------------*/
+
+@mixin mq($breakpoint: m) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@function font($type) {
+	@return map-get($font, $type);
+}
+
+@function color($type) {
+	@return map-get($color, $type);
+}
+
+@function margin($group, $type) {
+	@return map-get(map-get($margin, $group), $type);
+}
+
+@mixin full {
+	margin-left: -4vw;
+	margin-right: -4vw;
+}
+
+@mixin pd {
+	padding-left: 4vw;
+	padding-right: 4vw;
+}
+
+@mixin cf {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+}
+
+
+/*---------------------------------------------------------
+
+	common
+
+--------------------------------------------------------*/
+
+.cf:after {
+	@include cf;
+}
+
+.cl_b {
+	clear: both;
+}
+
+.dp_n {
+	display: none;
+}
+
+.mb_0 {
+	margin-bottom: 0 !important;
+}
+
+.mt_0 {
+	margin-top: 0 !important;
+}
+
+.op_0 {
+	opacity: 0;
+}
+
+.ps_r {
+	position: relative;
+}
+
+.ta_c {
+	text-align: center;
+}
+
+.ws_nw {
+	white-space: nowrap;
+}
+
+@include mq(s) {
+	.sp_mb_0 {
+		margin-bottom: 0 !important;
+	}
+}
+
+
+/*---------------------------------------------------------
+
+	module
+
+--------------------------------------------------------*/
+
+ul.inline li {
+	display: inline;
+	& + li {
+		margin-left: margin(text, s);
+	}
+}
+
+ul.mark li {
+	list-style: disc;
+	list-style-position: inside;
+}

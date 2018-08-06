@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@import "_module";
+
+.dp_n {
+	display: none;
+}
+
+input[type=text],textarea {
+	width: 100%;
+}
+
+table {
+
+	td,th {
+	
+	}
+}
+
+#side {
+	display: none;
+}
+
+main {
+	
+	p,ul,ol,dl,li {
+		margin-bottom: 1em;
+	}
+	
+	li:last-child {
+		margin-bottom: 0;
+	}
+	
+}

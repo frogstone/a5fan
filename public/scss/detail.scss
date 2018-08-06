@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+@import "import";
+
+.schoolDetail {
+
+	& > section {
+//		margin-top: margin(sp_y, 2l);
+		* + section {
+			margin-top: margin(sp_y, l);
+		}
+	}
+
+	h1 span[class^=icon] {
+		position: absolute;
+		top: 10px;
+		right: 4vw;
+		font-size: 28px;
+	}
+
+	section.intro .text {
+		display: flex;
+		flex-direction: column;
+		&>*{
+			order: 1;
+		}
+		figure {
+			order: 0;
+		}
+		/*h2 {
+			margin-top: 1em;
+		}*/
+	}
+	
+	figure.mainBnr {
+		text-align: center;
+	}
+
+	table.feature {
+		margin-top: 1em;
+		border-top: solid 1px color(lgray);
+		th,
+		td {
+			padding: 1em 0;
+			border-bottom: solid 1px color(lgray);
+		}
+		th {
+			white-space: nowrap;
+			padding-right: 1em;
+		}
+		td {
+			width: 100%;
+			padding-left: 1em;
+			border-left: solid 1px color(lgray);
+		}
+	}
+
+	table.price {
+
+		th,
+		td {
+			padding-top: 0.75em;
+			padding-bottom: 0.75em;
+			border-width: 1px;
+		}
+
+		th {
+			border-color: #fff;
+			padding-left: 1em;
+		}
+
+		td {
+			border-color: color(lgray);
+		}
+
+		th:nth-child(n+2),
+		td:nth-child(n+2) {
+			border-left-style: solid;
+			padding-left: 1em;
+		}
+
+		th {
+			background: color(lgray);
+		}
+
+		td {
+			border-bottom-style: solid;
+		}
+	}
+
+	dl.timetable {
+		
+		overflow: hidden;
+		dt {
+			float: left;
+			clear: left;
+			width: 3em;
+		}
+		dd {
+			margin-left: 3em;
+		}
+		
+	}
+	
+	@include mq(m) {
+
+		h1 span[class^=icon] {
+			top: 15px;
+			right: 15px;
+		}
+
+		section.intro .text {
+			float: left;
+			width: 55%;
+			margin-bottom: margin(pc_y, 2l);
+			figure.mainBnr {
+				text-align: left;
+			}
+
+		}
+
+		table.feature {
+			width: 40%;
+			float: right;
+			margin-top: 0;
+			margin-bottom: margin(pc_y, 2l);
+		}
+		
+		.btnWrap {
+			text-align: center;
+			margin: margin(pc_y,2l) auto 0;
+		}
+	}
+
+}

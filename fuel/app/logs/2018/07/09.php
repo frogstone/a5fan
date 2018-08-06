@@ -1,0 +1,12 @@
+<?php defined('COREPATH') or exit('No direct script access allowed'); ?>
+
+ERROR - 2018-07-09 07:38:08 --> Notice - Undefined index: img in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/views/admin/school_form.php on line 17
+ERROR - 2018-07-09 07:57:48 --> Notice - Undefined index: userfile in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/controller/adminyy/school.php on line 124
+ERROR - 2018-07-09 07:58:06 --> Notice - Undefined variable: uploadfile in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/controller/adminyy/school.php on line 124
+ERROR - 2018-07-09 08:13:34 --> Error - syntax error, unexpected 'and' (T_LOGICAL_AND) in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/model/hush.php on line 34
+ERROR - 2018-07-09 08:13:47 --> Error - syntax error, unexpected ')' in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/model/hush.php on line 35
+ERROR - 2018-07-09 08:59:56 --> Error - There is no security.output_filter defined in your application config file in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/core/classes/security.php on line 75
+ERROR - 2018-07-09 09:03:14 --> Warning - rename(/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/temp.,/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/15.): No such file or directory in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/controller/adminyy/school.php on line 139
+ERROR - 2018-07-09 09:04:17 --> Warning - rename(/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/temp.,/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/15.): No such file or directory in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/controller/adminyy/school.php on line 139
+ERROR - 2018-07-09 09:04:33 --> Warning - rename(/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/temp.,/Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/public/images/bnr_school/15.): No such file or directory in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/app/classes/controller/adminyy/school.php on line 139
+ERROR - 2018-07-09 10:12:47 --> Error - The requested view could not be found: index.php in /Users/frogstone/Dropbox/works/_mine/オンライン英会話/fuelphp-1.8/fuel/core/classes/view.php on line 440

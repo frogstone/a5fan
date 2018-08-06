@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.clB {
+	clear: both !important;
+}
+
+.mtM {
+	margin-top: 1em !important;
+}
+
+.mbM {
+	margin-bottom: 1em !important;
+}
+
+
+/*	width定義	*/
+@for $i from 1 through 10 {
+	.wd#{$i*10} {
+		width: #{$i*10}% !important;
+	}
+	.wd#{$i}em {
+		width: #{$i}em !important;
+	}
+}
