@@ -72,7 +72,7 @@
 		}
 
 	}
-	
+
 }
 
 @include mq(2l) {
@@ -110,35 +110,67 @@
 #mainHeader {
 
 	height: 80px;
+	margin-bottom: margin(sp_y,s);
 	position: relative;
+	background: color(blue1);
+
+	#logo {
+		display: table;
+		width: 32vw;
+		height: 80px;
+		a {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
 
 	@include mq(m) {
 		height: 90px;
+		#logo {
+			width: 123px;
+		}
 	}
 
 }
 
 #un {
 
+	position: absolute;
+	top: 0;
+	right: 6vw;
+
 	text-align: right;
 
 	li {
 		display: inline-block;
 		margin-left: 10px;
+		padding-top: 10px;
+	}
+
+	li.blog {
+		width: 36px;
+	}
+
+	li.bm {
+		width: 27px;
 	}
 
 	a {
+		display: block;
+		height: 60px;
+		line-height: 60px;
 		color: hsl(0, 0, 40%);
-		font-size: 32px;
 		text-decoration: none;
+		img {
+			vertical-align: middle;
+		}
 	}
 
 	.bm a {
-		font-size: 28px;
 		position: relative;
 		span {
 			position: absolute;
-			top: -0.5em;
+			top: 0em;
 			right: -0.5em;
 			display: inline-block;
 			width: 20px;
@@ -156,27 +188,37 @@
 
 	@include mq(m) {
 
-		a {
-			font-size: 36px;
+		li {
+			margin-left: 15px;
+			padding-top: 15px;
 		}
-		.bm a {
-			font-size: 32px;
-		}
+
 	}
 
 }
 
+#h1_n_pz {
+	
+	display: flex;
+	flex-direction: column;
+	
+	h1 {
+		order: 1;
+	}
+	
+}
+
 #pz {
 
+	margin-bottom: margin(sp_y,m);	
 	font-size: font(s);
-	padding: 0.5em 4vw;
+	padding: 0 4vw;
 	overflow: hidden;
-	background: color(lblue);
 
 	li {
 		display: inline;
 		position: relative;
-		color: #fff;
+		color: color(brown1);
 	}
 
 	li:first-child span {
@@ -189,60 +231,32 @@
 		width: 0;
 		height: 0;
 		border: solid 4px transparent;
-		border-left: solid 6px #fff;
+		border-left: solid 6px color(brown1);
 		position: relative;
-		top: -0.15em;
+		top: -0.1em;
 		margin-left: 0.5em;
 		margin-right: 0.4em;
 	}
 
 	a {
 		text-decoration: none;
-		color: #fff;
+		color: color(brown1);
 	}
 
 	@include mq(m) {
-		padding: 0.5em 1em;
+		margin-bottom: margin(pc_y,m);	
+		padding: 0;
 	}
 
 }
 
 #pz + figure {
 	@include mq(m) {
-		margin-top: margin(pc_y,m);
+		margin-top: margin(pc_y, m);
 	}
 }
 
-nav.outline {
 
-	margin-top: 2em;
-	background: color(ulgray);
-	padding: 1em;
-	box-sizing: border-box;
-
-	h2,
-	h3,
-	h4,
-	h5 {
-		font-size: font(m);
-	}
-	h3 {
-		text-decoration: none;
-	}
-	& > ul {
-
-		font-size: font(s);
-
-		& > li {
-			margin-top: 1em;
-		}
-
-		ul {
-			margin-left: 1.5em;
-			line-height: 2;
-		}
-	}
-}
 
 /*
 #gn {
@@ -415,6 +429,14 @@ nav.outline {
 
 ---------------------------------------------------------*/
 
+main * + section {
+	margin-top: margin(text,3l);
+}
+
+main section * + section {
+	margin-top: margin(text,2l);
+}
+
 @include mq(s) {
 
 	body > *:nth-child(n+3),
@@ -422,10 +444,7 @@ nav.outline {
 		margin-top: margin(sp_y, 3l);
 	}
 
-	main * + section {
-		margin-top: margin(sp_y, 2l);
-	}
-	
+
 }
 
 @include mq(m) {
@@ -434,9 +453,6 @@ nav.outline {
 		margin-top: margin(pc_y, 2l);
 	}
 
-	main * + section {
-		margin-top: margin(text, l);
-	}
 
 }
 
@@ -448,19 +464,37 @@ main * + p {
 
 /*---------------------------------------------------------
 
-	twitter & ranking
+	twitteritter & ranking
 
 ---------------------------------------------------------*/
 
 @include mq(s) {
-	div#tw_n_ranking > section:nth-of-type(n+2) {
+
+	section.twitter {
+
+		background: color(blue3);
+		padding-top: margin(sp_y, m);
+		padding-bottom: margin(sp_y, m);
+
+		h2 {
+			@include pd;
+		}
+
+	}
+
+	div#twitter_n_ranking > section:nth-of-type(n+2) {
 		margin-top: margin(sp_y, 2l);
 	}
+
 }
 
 @include mq(m) {
 
-	div#tw_n_ranking {
+	div#twitter_n_ranking {
+
+		background: color(blue3);
+		padding-top: margin(pc_y, l);
+		padding-bottom: margin(pc_y, l);
 
 		display: flex;
 
@@ -470,7 +504,7 @@ main * + p {
 			box-sizing: border-box;
 		}
 
-		section.tw {
+		section.twitter {
 			width: 60%;
 		}
 
@@ -483,7 +517,7 @@ main * + p {
 
 @include mq(2l) {
 
-	body.two div#tw_n_ranking {
+	body.two div#twitter_n_ranking {
 
 		flex-direction: column;
 
@@ -496,9 +530,23 @@ main * + p {
 			margin-top: margin(pc_y, 2l);
 		}
 
-		section.tw,
+		section.twitter,
 		section.ranking {
 			width: 100%;
 		}
+	}
+}
+
+footer#main_footer {
+	background: color(blue2);
+	color: #fff;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+@include mq(m) {
+	div#twitter_n_ranking + footer {
+		margin-top: 0;
 	}
 }

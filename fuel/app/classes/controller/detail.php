@@ -22,8 +22,7 @@ class Controller_Detail extends Controller_init
 					"view"		=> "detail",
 					"css" 		=> "detail",
 					"param"		=> array(
-						"school"		=> $school,
-						"bodyclass"	=> "two"
+						"school"		=> $school
 					)
 				)
 			);

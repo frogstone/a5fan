@@ -24,34 +24,60 @@ l: 125%,
 4l: 200%,
 5l: 225%);
 
-$color:( text: hsl(0, 0, 30%),
-border: hsl(0, 0, 60%),
-blue: #438AB5,
-lblue: #BAD6E8,
-dblue: #677680,
-green: #1B9188,
-orange: #DD6A07,
-dgray: hsl(0, 0, 20%),
-mgray: hsl(0, 0, 60%),
-lgray: hsl(0, 0, 90%),
-ulgray: hsl(0, 0, 97%));
+/*
+$color:(
+	text: ##4D4D4D,
+	border: hsl(0, 0, 60%),
+	blue: #438AB5,
+	lblue: #BAD6E8,
+	dblue: #677680,
+	green: #1B9188,
+	orange: #DD6A07,
+	dgray: hsl(0, 0, 20%),
+	mgray: hsl(0, 0, 60%),
+	lgray: hsl(0, 0, 90%),
+	ulgray: hsl(0, 0, 97%)
+);
+*/
 
-$margin:( text:( s: 0.5em,
-m: 1em,
-l:2em,
-2l :3em,
-3l :4em),
-sp_y:( s:10px,
-m:20px,
-l:30px,
-2l:40px,
-3l:60px,
-),
-pc_y:( s:20px,
-m:30px,
-l:40px,
-2l:60px,
-),
+
+$color:(
+	text:		#4D4D4D,
+	blue1:	#438AB5,
+	blue2:	#677680,
+	blue3:	#E4EBED,
+	brown1:	#66554A,
+	orange1:	#DD6A07,
+	green1:	#1B9188,
+	green2:	#A3D165,
+	gray1:	#999,
+	gray2:	#B3B3B3,
+	gray3:	#E6E6E6
+);
+
+$margin:(
+	text:(
+		2s: 0.25em,
+		s: 0.5em,
+		m: 1em,
+		l:1.5em,
+		2l :2em,
+		3l :3em,
+		4l :4em
+	),
+	sp_y:(
+		s:10px,
+		m:20px,
+		l:30px,
+		2l:40px,
+		3l:60px
+	),
+	pc_y:(
+		s:20px,
+		m:30px,
+		l:40px,
+		2l:60px,
+	),
 /*
 	sp_x:(
 		base:6vw,

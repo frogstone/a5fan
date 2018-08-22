@@ -33,11 +33,21 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	line-height: 1.6;
 	letter-spacing: 0.1em;
+	word-wrap: break-word;
 }
 
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+img.bd {
+	border: solid 1px color(gray3);
+	box-sizing: border-box;
+}
+
+a {
+	color: #006299;
 }
 
 h1,
@@ -166,59 +176,170 @@ table {
 ---------------------------------------------------------*/
 
 @mixin hd1 {
-	padding: 10px 4vw 0 4vw;
-	margin-bottom: margin(sp_y, l);
-	color: #fff;
-	font-size: font(l);
-	min-height: 50px;
-	box-sizing: border-box;
-	@include mq(s) {
-		@include full;
+
+	min-height: 38px;
+	/*位置調整*/
+	margin-top: 3px;
+	margin-bottom: margin(text, m);
+	font-size: font(2l);
+	font-weight: bold;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 38px;
+		height: 38px;
+		/*位置調整*/
+		margin-top: -3px;
+		margin-right: margin(text, 2s);
+		background-color: color(brown1);
+		background-image: url(../images/books.svg);
+		background-size: 75% auto;
+		background-repeat: no-repeat;
+		background-position: center center;
+		border-radius: 50%;
+		vertical-align: middle;
 	}
+
 	@include mq(m) {
-		min-height: 60px;
-		padding: 0.7em 1em;
-	}	
+		min-height: 48px;
+		&:before {
+			width: 48px;
+			height: 48px;
+			margin-right: margin(text, s);
+		}
+
+	}
+
+	&.blue1 {
+		color: color(blue1);
+		&:before {
+			background-color: color(blue1);
+		}
+	}
+
+	&.brown1 {
+		color: color(brown1);
+		&:before {
+			background-color: color(brown1);
+		}
+	}
+
+	&.twitter:before {
+		background-image: url(../images/twitter.svg);
+		background-size: 65% auto;
+	}
+
+	&.ranking:before {
+		background-image: url(../images/ranking.svg);
+		background-size: auto 70%;
+	}
+
+	&.filter:before {
+		background-image: url(../images/filter.svg);
+		background-size: 60% auto;
+	}
+	
+}
+
+@mixin hd1_orange {
+	@include hd1;
+	color: color(orange1);
+	&:before {
+		background-color: color(orange1);
+	}
 }
 
 @mixin hd2 {
+	color: color(blue1);
+	line-height: 1.2;
+	position: relative;
+	margin-bottom: margin(text, m);
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		bottom: -0.7em;
+		left: 0;
+		background: repeating-linear-gradient(-45deg, #fff 0px, #fff 3px, color(blue1) 3px, color(blue1) 6px);
+	}
+}
+
+@mixin hd3 {
+	color: #000;
+	span {
+		background: linear-gradient(transparent 80%, color(green2) 80%);
+	}
+}
+
+@mixin hd4 {
+	color: color(blue1);
 	font-size: font(l);
-	line-height: 1.3;	
+	margin-bottom: margin(text,m);
+	line-height: 1.3;
+}
+
+@mixin hd5 {
+	color: #fff;
+	font-size: font(l);
+	margin-bottom: margin(text,l);
+	background: color(brown1);
+	border-radius: 2em;
+	line-height: 1;
+	padding: 1em;
+	padding-left: 3.3em;
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		top: 5px;
+		left: 5px;
+		width:calc(-10px + 3em);
+		height: calc(-10px + 3em);
+		display: inline-block;
+		border-radius: 50%;
+		background: url(../images/dollar.svg) no-repeat center center #fff;
+		background-size: auto 80%;
+	}
+	@include mq(s) {
+		margin-left: -2vw;
+		margin-right: -2vw;
+	}
+}
+
+@mixin hd6 {
+	color: #000;
+	border-left: solid 5px #000;
+	padding: 0.5em;
+	padding-left: 0.7em;
+	margin-bottom: margin(text,m);
 }
 
 .hd1 {
 	@include hd1;
 }
 
-h1.hd1 {
-	margin-bottom: 0;
-}
-
-.hd1.blue {
-	background: color(blue);
-}
-
-.hd1.dgray {
-	background: color(dgray);
-}
-
 .hd2 {
 	@include hd2;
 }
 
-.hd2.blue {
-	color: color(blue);
-}
-
 .hd3 {
-	display: inline-block;
-	color: #fff;
-	padding: 0 0.5em;
+	@include hd3;
 }
 
-.hd3.dgray {
-	background: color(dgray);
+.hd4 {
+	@include hd4;
 }
+
+.hd5 {
+	@include hd5;
+}
+
+.hd6 {
+	@include hd6;
+}
+
 
 /*---------------------------------------------------------
 
@@ -250,12 +371,12 @@ h1.hd1 {
 }
 
 
-.btn.green {
-	background: color(green);
+.btn.green1 {
+	background: color(green1);
 }
 
-.btn.orange {
-	background: color(orange);
+.btn.orange1 {
+	background: color(orange1);
 }
 
 /*---------------------------------------------------------
@@ -266,43 +387,63 @@ h1.hd1 {
 
 section.schoolList {
 
-	overflow: hidden;
 	position: relative;
-	padding-top: margin(sp_y, m);
+
+	&:nth-of-type(n+2) {
+
+		padding-top: margin(text, l);
+		margin-top: margin(text, l);
+		border-top: solid 1px color(gray2);
+
+		figure {
+			top: margin(text, l);
+		}
+
+		@include mq(m) {
+			padding-top: margin(text, 2l);
+			margin-top: margin(text, 2l);
+			figure {
+				top: margin(text, 2l);
+			}
+		}
+
+	}
+
+	h2 {
+		transform: translateY(-0.2em);
+	}
 
 	figure {
-		width: 30%;
-		float: left;
+		width: 30vw;
+		position: absolute;
+		top: 0;
+		left: 4vw;
 	}
 
-	section {
-		margin-top: 0;
+	dl.merit {
+
+		& > * {
+			display: inline-block;
+		}
+
+		& dt {
+			background: color(gray3);
+			border-radius: 2px;
+			padding: 0 0.3em;
+		}
 	}
 
-	.name {
-		margin-top: -0.3em;
-	}
 
-	h3.cp {
+	h3 {
 		line-height: 1.3;
 		color: color(blue);
 		margin-top: 0.5em;
 	}
 
-	dl.merit > * {
-		display: inline-block;
-	}
-
-	dl.merit dt {
-		background: color(lgray);
-		border-radius: 2px;
-		padding: 0 0.3em;
-	}
-
 	.feature {
 
 		margin-bottom: 1em;
-		
+
 		li {
 			display: inline-block;
 			line-height: 2.8em;
@@ -311,7 +452,7 @@ section.schoolList {
 
 		a {
 			padding: 0.5em;
-			background: color(dblue);
+			background: color(blue2);
 			border-radius: 5px;
 			color: #fff;
 			text-decoration: none;
@@ -326,25 +467,31 @@ section.schoolList {
 		}
 	}
 
+	p.bm {
+		width: 40px;
+		height: 40px;
+		background: url(../images/bookmark.svg) no-repeat center center color(gray3);
+		background-size: 50% auto;
+		border-radius: 50%;
+	}
+
 	@include mq(s) {
 
 		@include pd;
 
-		/* for bug of iOS safari */
-		.name {
-			margin-left: calc(30% + 1em);
+		h2,
+		h3,
+		dl.merit {
+			margin-left: calc(32.6086% + 4vw);
 		}
-		
+
 		dl.merit {
 			font-size: font(2s);
 		}
-		
-		section {
-			margin-bottom: 1em;
-		}
 
-		figure {
-			margin-right: 1em;
+		section,
+		div.detail {
+			margin-top: margin(text, m);
 		}
 
 		.btns li {
@@ -366,27 +513,25 @@ section.schoolList {
 
 	@include mq(m) {
 
-		padding-top: margin(pc_y, m);
+		padding-left: 22.6315%;
 
-		h2.name {
-			font-size: font(2l);
+		h3 {
+			@include hd3;
 		}
 
 		figure {
 			width: 20%;
-			padding-right: 2em;
-			box-sizing: border-box;
+			left: 0;
 		}
-		.text {
+
+		div.body {
 			float: left;
-			width: 50%;
-			margin-top: 0;
-			padding-right: 2em;
-			box-sizing: border-box;
+			width: 52.721%;
 		}
+
 		div.detail {
 			float: right;
-			width: 30%;
+			width: 38.7755%;
 		}
 
 		.btns li {
@@ -398,13 +543,9 @@ section.schoolList {
 				padding-right: 1em;
 			}
 		}
+
 	}
 
-}
-
-section.schoolList:nth-of-type(n+2) {
-	margin-top: margin(sp_y, m);
-	border-top: solid 1px color(border);
 }
 
 section.schoolList.rank {
@@ -415,29 +556,55 @@ section.schoolList.rank {
 	}
 
 	figure {
-		width: 25%;
+		position: static;
+		width: 31.92vw;
 		float: left;
-		margin-right: 0;
-		padding-right: 1em;
+		padding-right: margin(text, m);
 		box-sizing: border-box;
 	}
 
-	.text {
-		width: 75%;
+	div.body {
+		width: 60.08vw;
 		float: right;
 	}
 
-	.copy {
-		line-height: 1.3;
-		color: color(blue);
+	h3 {
+		color: color(blue1);
+		margin-left: 0;
+		margin-top: -0.3em;
 	}
-	
-	@include mq(s) {
-		
-		.name {
-			margin-left: 0;
+
+	p {
+		line-height: 1.3;
+		margin-top: margin(text, m);
+	}
+
+	@include mq(m) {
+
+		padding-left: 0;
+
+		&:nth-of-type(n+2) {
+
+			padding-top: margin(text, l);
+			margin-top: margin(text, l);
+			figure {
+				top: margin(text, l);
+			}
+
 		}
-	
+
+		h3 {
+			font-size: font(l);
+		}
+
+		figure {
+			width: 30.2381%;
+		}
+
+		div.body {
+			width: 69.7619%;
+		}
+
 	}
 
 }
@@ -458,8 +625,6 @@ section.schoolList.rank {
 
 }
 
-
-
 /*---------------------------------------------------------
 
 	tweeter
@@ -468,37 +633,39 @@ section.schoolList.rank {
 
 ul.tweets {
 
-	figure {
-		width: 15%;
-		float: left;
-	}
-
-	.author {
-		margin-top: -0.3em;
-	}
-
 	li {
 
 		line-height: 1.4;
 		overflow: hidden;
-
-		& > *:nth-child(n+2) {
-			width: 85%;
-			float: right;
-			padding-left: 1em;
-			box-sizing: border-box;
-		}
-
-		& > *:nth-child(n+3) {
-			margin-top: 0.5em;
-		}
 	}
 
 	li:nth-of-type(n+2) {
-		margin-top: margin(sp_y, m);
-		padding-top: margin(sp_y, m);
-		border-top: solid 1px color(border);
+		margin-top: margin(text, l);
+		padding-top: margin(text, l);
+		border-top: solid 1px color(gray2);
 	}
+
+	figure {
+		width: 24vw;
+		padding-right: margin(text, m);
+		float: left;
+		box-sizing: border-box;
+	}
+
+	div.body {
+		width: 68vw;
+		float: right;
+		box-sizing: border-box;
+		p + p {
+			margin-top: 1em;
+		}
+	}
+
+	.author {
+		margin-top: -0.3em;
+		text-align: left;
+	}
+
 
 	@include mq(s) {
 		li {

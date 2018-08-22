@@ -1,7 +1,9 @@
 $(function() {
 	
 	$("body").addClass("jsOn");
+	$("body.article main section h4").wrapInner("<span>");
 	
+	/*
 	$(".jsHbm").on("click",function(){
 		if($(this).hasClass("on")) {
 			$(this).removeClass("on");
@@ -11,7 +13,7 @@ $(function() {
 			$("#gn").addClass("on");
 		}
 	});
-	
+	*/
 	$(".jsSchoolList").on("click",function(){
 		if($(this).hasClass("on")) {
 			$(this).removeClass("on");

@@ -59,7 +59,9 @@ class Model_Hush extends Model
 					$data["v_imgTag"] = sprintf('<img src="%s">',sprintf("%simages/school_banner/%s.%s",Uri::base(false),$data["id"],$v));
 					break;
 				}
-				
+				if(empty($data["v_imgTag"])) {
+					$data["v_imgTag"] = sprintf('<img src="%s">',sprintf("%simages/school_banner/noimage.jpg",Uri::base(false)));					
+				}				
 			}
 		}
 		

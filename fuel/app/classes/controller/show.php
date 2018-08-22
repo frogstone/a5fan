@@ -14,8 +14,8 @@ class Controller_Show extends Controller_init
 				case "オンライン英会話スクールの選び方":
 					$view	= View::forge("show",array(
 							"template"	=> true,
-							"view"		=> "erabikata",
-							"css" 		=> "erabikata",
+							"view"		=> "blog",
+							"css" 		=> "blog",
 							"param"		=> array(
 								"bodyclass"	=> "article"
 							)

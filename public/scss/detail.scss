@@ -4,13 +4,6 @@
 
 .schoolDetail {
 
-	& > section {
-//		margin-top: margin(sp_y, 2l);
-		* + section {
-			margin-top: margin(sp_y, l);
-		}
-	}
-
 	h1 span[class^=icon] {
 		position: absolute;
 		top: 10px;
@@ -18,31 +11,51 @@
 		font-size: 28px;
 	}
 
-	section.intro .text {
-		display: flex;
-		flex-direction: column;
-		&>*{
-			order: 1;
+	div.intro {
+
+		@include mq(s) {
+			
+			display: flex;
+			flex-direction: column;
+
+			& > * {
+				order: 1;
+			}
+
+			.figure {
+				order: 0;
+				margin-bottom: margin(sp_y,l);
+			}
+
 		}
-		figure {
-			order: 0;
+		
+		@include mq(m) {
+		
+			section.explanation {
+				width: 64.9122%;
+				float: left;
+			}
+			
+			div.figure {
+				width: 31.5789%;
+				float: right;				
+			}
+			
 		}
-		/*h2 {
-			margin-top: 1em;
-		}*/
+
 	}
-	
+
 	figure.mainBnr {
 		text-align: center;
 	}
 
 	table.feature {
 		margin-top: 1em;
-		border-top: solid 1px color(lgray);
+		border-top: solid 1px color(gray3);
 		th,
 		td {
 			padding: 1em 0;
-			border-bottom: solid 1px color(lgray);
+			border-bottom: solid 1px color(gray3);
 		}
 		th {
 			white-space: nowrap;
@@ -51,7 +64,7 @@
 		td {
 			width: 100%;
 			padding-left: 1em;
-			border-left: solid 1px color(lgray);
+			border-left: solid 1px color(gray3);
 		}
 	}
 
@@ -70,7 +83,7 @@
 		}
 
 		td {
-			border-color: color(lgray);
+			border-color: color(gray3);
 		}
 
 		th:nth-child(n+2),
@@ -80,7 +93,7 @@
 		}
 
 		th {
-			background: color(lgray);
+			background: color(gray3);
 		}
 
 		td {
@@ -89,7 +102,7 @@
 	}
 
 	dl.timetable {
-		
+
 		overflow: hidden;
 		dt {
 			float: left;
@@ -99,9 +112,9 @@
 		dd {
 			margin-left: 3em;
 		}
-		
+
 	}
-	
+
 	@include mq(m) {
 
 		h1 span[class^=icon] {
@@ -120,16 +133,43 @@
 		}
 
 		table.feature {
-			width: 40%;
-			float: right;
-			margin-top: 0;
-			margin-bottom: margin(pc_y, 2l);
+			margin-top: 1em;
+		}
+
+		.figure .btnWrap {
+			margin-top: margin(text,m);
 		}
 		
 		.btnWrap {
 			text-align: center;
-			margin: margin(pc_y,2l) auto 0;
+			margin: margin(text, 3l) auto 0;
 		}
+		
 	}
 
+}
+
+#price > section:nth-of-type(1) {
+	margin-top: 0;
+}
+
+@include mq(m) {
+
+	#price > section {
+		width: 47.3684%;
+		float: left;
+	}
+	
+	#price > section:nth-of-type(2) {
+		margin-top: 0;
+	}
+
+	#price > section:nth-of-type(even) {
+		float: right;
+	}
+	
+	#price > section:nth-of-type(odd) {
+		clear: both;
+	}
+	
 }

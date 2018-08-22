@@ -20,10 +20,10 @@
 <body <?php if(!empty($param["bodyclass"])) echo 'class="'.$param["bodyclass"].'"'; ?>>
 	<header id="mainHeader" class="outer">
 		<div class="inner">
-			<p id="logo"><a href="#">A5fan</a></p>
+			<p id="logo"><a href="<?= Uri::base(false); ?>"><img src="<?= Uri::base(false); ?>images/logo.svg" alt="A5fan"></a></p>
 			<ul id="un">
-				<li class="explain"><a href="<?= Uri::base(false); ?>オンライン英会話スクールの選び方" class="icon-book"></a></li>
-				<li class="bm jsBm"><a href="#" class="icon-folder"><span>0</span></a></li>
+				<li class="blog"><a href="<?= Uri::base(false); ?>オンライン英会話スクールの選び方"><img src="<?= Uri::base(false); ?>images/filter.svg" alt="オンライン英会話スクールの選び方"></a></li>
+				<li class="bm jsBm"><a href="#"><img src="<?= Uri::base(false); ?>images/bookmark.svg" alt=""><span>0</span></a></li>
 			</ul>
 		</div>
 	</header>

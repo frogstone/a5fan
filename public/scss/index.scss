@@ -6,6 +6,15 @@ main > .inner > section:first-of-type {
 	margin-top: 0;
 }
 
+#mainHeader {
+
+	margin-bottom: margin(sp_y,l);
+	
+	@include mq(m) {
+		margin-bottom: margin(pc_y,l);
+	}
+}
+
 #searchBtn {
 	border: none;
 	outline: none;

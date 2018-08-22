@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import "import";
+
+main h2 {
+	@include hd1_orange;
+}
+
+main section h3 {
+	@include hd6;
+}
+
+main section h4 {
+	@include hd3;
+}
+
+nav.outline {
+
+	background: color(gray3);
+	padding: 1em;
+	box-sizing: border-box;
+	border-radius: 5px;
+
+	h2,
+	h3,
+	h4,
+	h5 {
+		font-size: font(m);
+	}
+	h3 {
+		text-decoration: none;
+	}
+	& > ul {
+
+		font-size: font(s);
+
+		& > li + li {
+			margin-top: margin(text,m);
+		}
+		
+		ul {
+			margin-left: 1.5em;
+			line-height: 2;
+		}
+	}
+}
+
+figure#yy {
+	float: right;
+	width: 40%;
+	margin-left: 1.5em;
+	@include mq(m) {
+		width: 30%;
+	}
+}
+
+#recommentd {
+
+	.btnWrap {
+		text-align: center;
+		margin-top: margin(text, 2l);
+	}
+
+}
+
+/*
+section.wfig {
+
+
+	@include mq(s) {
+		@include full;
+		& > :not(figure) {
+			@include sp_pd;
+		}
+	}
+
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	& > figure {
+		order: 0;
+		margin-bottom: 2em;
+	}
+
+	& > :not(figure) {
+		order: 1;
+	}
+
+}
+
+*/
