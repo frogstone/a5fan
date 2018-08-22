@@ -18,7 +18,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#intro">オンライン英会話をはじめる前</a>
+					<a href="#intro">オンライン英会話をはじめる前に</a>
 					<ul>
 						<li><a href="#intro1">非ネイティブ講師はダメなのか？</a></li>
 						<li><a href="#intro2">キッズの場合は専用スクールを</a></li>
