@@ -13,3 +13,6 @@ if ( isset($_GET['key']) && $_GET['key'] === $SECRET_KEY && isset($_POST['payloa
 } else {
     file_put_contents($LOG_FILE, date("[Y-m-d H:i:s]")." invalid access: ".$_SERVER['REMOTE_ADDR']."\n", FILE_APPEND|LOCK_EX);
 }
+
+
+?>
