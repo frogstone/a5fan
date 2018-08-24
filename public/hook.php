@@ -15,3 +15,4 @@ if ( isset($_GET['key']) && $_GET['key'] === $SECRET_KEY && isset($_POST['payloa
 }
 
 
+?>
