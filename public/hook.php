@@ -14,7 +14,8 @@
 # ──────────────────────────────
 
 # ログファイル定義
-$LOG_FILE = dirname(__FILE__).'/_hook.log/hook.log';
+//$LOG_FILE = dirname(__FILE__).'/_hook.log/hook.log';
+$LOG_FILE = dirname(__FILE__).'/hook.log';
 
 # エラーログファイル定義
 $LOG_FILE_ERR = dirname(__FILE__).'/_hook.log/hook-error.log';
