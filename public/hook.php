@@ -2,6 +2,7 @@
 
 chdir("/var/www/html/online_english.club");
 exec('git pull origin master');
+die("do it");
 exit;
 
 
