@@ -41,6 +41,7 @@ $hmac = hash_hmac('sha1', $post_data, $SECRET_KEY);
 //if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='.$hmac ) {
 if ($BRANCHS) {
 
+print $LOG_FILE." ";
 print(__LINE__." ");
 		
     # 受け取ったJSONデータ
