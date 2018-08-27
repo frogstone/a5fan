@@ -77,6 +77,6 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
     );
 }
 
-die("end");
+die("ends");
 
 ?>
