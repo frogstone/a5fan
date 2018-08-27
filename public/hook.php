@@ -61,7 +61,8 @@ print($branch." ");
 			  
             # pull実行
             //exec('git pull origin '.$branch.' 2>&1', $output, $return);
-            exec('git pull origin '.$branch.' 2>&1');
+            //exec('git pull origin '.$branch.' 2>&1');
+            exec('git pull origin '.$branch);
 
             # ログ記録
             file_put_contents($LOG_FILE,
