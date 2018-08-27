@@ -16,14 +16,8 @@
 # ログファイル定義
 $LOG_FILE = dirname(__FILE__).'/_hook.log/hook.log';
 
-print($LOG_FILE);
-
 # エラーログファイル定義
 $LOG_FILE_ERR = dirname(__FILE__).'/_hook.log/hook-error.log';
-
-print($LOG_FILE_ERR);
-
-exit;
 
 # GitHubに設定するパスワード的な物(お好きな文字列)
 $SECRET_KEY = '43219287';
@@ -82,4 +76,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
         FILE_APPEND|LOCK_EX
     );
 }
+
+die("end");
+
 ?>
