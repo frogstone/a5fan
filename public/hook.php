@@ -1,5 +1,10 @@
 <?php
 
+chdir("/var/www/html/online_english.club");
+exec('git pull origin master');
+exit;
+
+
 /*
  * ▼ このファイルの使い方
  * GitHubの Settings > Webhooks に以下のように設定する
