@@ -49,7 +49,8 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
         if($payload['ref'] == 'refs/heads/'.$branch){
 
             # 各サイトのブランチフォルダに移動
-            chdir($payload['repository']['name'].'/'.$branch);
+            //chdir($payload['repository']['name'].'/'.$branch);
+            chdir('../'.$branch);
 
             # pull実行
             exec('git pull origin '.$branch.' 2>&1', $output, $return);
@@ -77,6 +78,6 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
     );
 }
 
-die("ends");
+die("endsa");
 
 ?>
