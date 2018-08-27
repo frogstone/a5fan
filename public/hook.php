@@ -1,8 +1,8 @@
 <?php
 
 chdir("/var/www/html/online_english.club");
-exec('git pull origin master');
-die("do it");
+exec('git pull origin master 2>&1',$output,$return);
+var_dump($output,$return);
 exit;
 
 
