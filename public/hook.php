@@ -50,7 +50,7 @@ if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='
 
             # 各サイトのブランチフォルダに移動
             //chdir($payload['repository']['name'].'/'.$branch);
-            chdir('../'.$branch);
+            chdir('../');
 
             # pull実行
             exec('git pull origin '.$branch.' 2>&1', $output, $return);
