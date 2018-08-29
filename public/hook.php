@@ -2,7 +2,7 @@
 
 chdir("/var/www/html/online_english.club");
 #exec('git pull origin master 2>&1',$output,$return);
-exec('git pull origin masters',$output,$return);
+exec('git pull origin master',$output,$return);
 var_dump($output,$return);
 exit;
 #exit;
