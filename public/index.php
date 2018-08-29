@@ -1,6 +1,6 @@
 <?php
 /**
- * Fuel is a fast, lightweight, community driven PHP5 framework.aaabbbcccddd
+ * Fuel is a fast, lightweight, community driven PHP5 framework.aaabbbccc
  *
  * @package    Fuel
  * @version    1.8
