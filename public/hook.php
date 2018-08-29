@@ -75,7 +75,7 @@ print(__LINE__." ");
 			  
 			  
 			  if(!empty($output) or !empty($return)){
-				  	//var_dump($output,$return);
+				  	var_dump($output,$return);
 			  }
 			  
 			  
