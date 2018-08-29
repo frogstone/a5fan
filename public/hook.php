@@ -1,10 +1,10 @@
 <?php
 
-#chdir("/var/www/html/online_english.club");
-#exec('git pull origin master',$output,$return);
-#var_dump($output,$return);
+chdir("/var/www/html/online_english.club");
+exec('git pull origin master',$output,$return);
+var_dump($output,$return);
 #die("ok ");
-#exit;
+exit;
 
 
 /*
