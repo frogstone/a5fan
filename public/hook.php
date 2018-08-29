@@ -25,7 +25,7 @@
 $LOG_FILE = dirname(__FILE__).'/hook.log';
 
 # エラーログファイル定義
-$LOG_FILE_ERR = dirname(__FILE__).'/_hook.log/hook-error.log';
+$LOG_FILE_ERR = dirname(__FILE__).'/hook-error.log';
 
 # GitHubに設定するパスワード的な物(お好きな文字列)
 $SECRET_KEY = '43219287';
@@ -62,7 +62,7 @@ print(__LINE__." ");
             # 各サイトのブランチフォルダに移動
             //chdir($payload['repository']['name'].'/'.$branch);
             //chdir('../');
-			  if(!chdir("/var/www/html/online_english.club")) {
+			  if(!chdir("/var/www/html/online_english.club/.git")) {
 				  print("failed chdir ");
 			  }
 			  
