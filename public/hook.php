@@ -68,7 +68,9 @@ print(__LINE__." ");
             # pull実行
             //exec('git pull origin '.$branch.' 2>&1', $output, $return);
             //exec('git pull origin '.$branch.' 2>&1');
-			  if(!exec('git pull origin '.$branch,$output,$return)) {
+			  exec('git pull origin '.$branch,$output,$return);
+			  
+			  if(!empty($output) or !empty($return)){
 				  	var_dump($output,$return);
 			  }
 			  
