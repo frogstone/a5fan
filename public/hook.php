@@ -62,7 +62,9 @@ print(__LINE__." ");
             # 各サイトのブランチフォルダに移動
             //chdir($payload['repository']['name'].'/'.$branch);
             //chdir('../');
-			  chdir("/var/www/html/online_english.club");
+			  if(!chdir("/var/www/html/online_english.club")) {
+				  print("failed chdir ");
+			  }
 			  
 			  # pull実行
 			  exec('git pull origin '.$branch.' 2>&1', $output, $return);
