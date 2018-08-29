@@ -63,7 +63,7 @@ print(__LINE__." ");
             //chdir($payload['repository']['name'].'/'.$branch);
             //chdir('../');
 			  
-			  if(!chdir("/var/www/html/online_english.club/.git")) {
+			  if(!chdir("/var/www/html/online_english.club")) {
 				  print("failed chdir ");
 			  }
 			  
