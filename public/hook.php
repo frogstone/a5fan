@@ -64,9 +64,9 @@ print(__LINE__." ");
             //chdir('../');
 			  chdir("/var/www/html/online_english.club");
 			  
-            # pull実行
-            //exec('git pull origin '.$branch.' 2>&1', $output, $return);
-			  exec('git pull origin '.$branch.' 2>&1');
+			  # pull実行
+			  exec('git pull origin '.$branch.' 2>&1', $output, $return);
+			  //exec('git pull origin '.$branch.' 2>&1');
 			  //exec('git pull origin '.$branch,$output,$return);
 			  
 			  if(!empty($output) or !empty($return)){
