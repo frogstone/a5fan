@@ -63,14 +63,15 @@ print(__LINE__." ");
             //chdir($payload['repository']['name'].'/'.$branch);
             //chdir('../');
 			  chdir("/var/www/html/online_english.club");
-
-print($branch." ");
 			  
             # pull実行
             //exec('git pull origin '.$branch.' 2>&1', $output, $return);
             //exec('git pull origin '.$branch.' 2>&1');
-            exec('git pull origin '.$branch);
-
+			  if!(exec('git pull origin '.$branch,$output,$return))) {
+				  	var_dump($output,$return);
+			  }
+			  
+			  
             # ログ記録
             file_put_contents($LOG_FILE,
                 date("[Y-m-d H:i:s]")." ".
