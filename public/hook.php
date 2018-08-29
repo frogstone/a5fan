@@ -46,7 +46,6 @@ $hmac = hash_hmac('sha1', $post_data, $SECRET_KEY);
 # 'X-Hub-Signature'はGitHubのWebhooksで設定したSecret項目
 # リクエストヘッダで受け取ったSecretとconfig.phpの$SECRET_KEYが同一であれば認証成功
 if ( isset($header['X-Hub-Signature']) && $header['X-Hub-Signature'] === 'sha1='.$hmac ) {
-//if ($BRANCHS) {
 
 print(__LINE__." ");
 		
@@ -107,6 +106,6 @@ print(__LINE__." ");
     );
 }
 
-die("endsa");
+die("end");
 
 ?>
