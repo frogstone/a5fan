@@ -1,9 +1,9 @@
 <?php
 
-#chdir("/var/www/html/online_english.club");
-#exec('git pull origin master',$output,$return);
-#var_dump($output,$return);
-#exit;
+chdir("/var/www/html/online_english.club");
+exec('git pull origin master',$output,$return);
+var_dump($output,$return);
+exit;
 
 
 /*
@@ -42,6 +42,8 @@ $post_data = file_get_contents( 'php://input' );
 
 # ハッシュ値を生成
 $hmac = hash_hmac('sha1', $post_data, $SECRET_KEY);
+
+print(__LINE__." ");
 
 # 'X-Hub-Signature'はGitHubのWebhooksで設定したSecret項目
 # リクエストヘッダで受け取ったSecretとconfig.phpの$SECRET_KEYが同一であれば認証成功
