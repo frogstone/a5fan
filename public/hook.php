@@ -6,7 +6,7 @@
 #exit;
 
 
-/*ab
+/*abc
  * ▼ このファイルの使い方
  * GitHubの Settings > Webhooks に以下のように設定する
  * Payload URL:     http://xxxxx.heteml.net/_hook.php
