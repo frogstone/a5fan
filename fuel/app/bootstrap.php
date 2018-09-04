@@ -24,5 +24,7 @@ if(!empty($_SERVER["SERVER_NAME"]) and preg_match("/local/",$_SERVER["SERVER_NAM
 	Fuel::$env = Fuel::TEST;
 }
 
+die(Fuel::$env);
+
 // Initialize the framework with the config file.
 \Fuel::init('config.php');
